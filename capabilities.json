@@ -1,0 +1,99 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Category 1",
+      "name": "varXcat",
+      "kind": "Grouping"
+    },
+    {
+      "displayName": "Category 2",
+      "name": "varYcat",
+      "kind": "Grouping"
+    },
+    {
+      "displayName": "Count Variable",
+      "name": "varYval",
+      "kind": "Measure"
+    }
+  ],
+  "objects": {
+    "percentages": {
+      "displayName": "Percentages",
+      "properties": {
+        "row": {
+          "displayName": "Row",
+          "description": "Show row percentages",
+          "type": {
+            "bool": true
+          }
+        },
+        "column": {
+          "displayName": "Column",
+          "description": "Show column percentages",
+          "type": {
+            "bool": true
+          }
+        },
+        "total": {
+          "displayName": "Total",
+          "description": "Show total percentages",
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    },
+    "fonts":{
+      "displayName": "Text",
+      "properties": {
+        "fontSize": {
+          "displayName": "Font Size",
+          "type": {
+            "formatting": {
+              "fontSize": true
+            }
+          }
+        },
+        "fontFamily": {
+          "displayName": "Font Family",
+          "type": {
+            "formatting": {
+              "fontFamily": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "dataViewMappings": [
+    {
+      "categorical": {
+        "categories": {
+          "for": {
+            "in": "varYcat"
+          },
+          "dataReductionAlgorithm": {
+            "top": {}
+          }
+        },
+        "values": {
+          "group": {
+            "by": "varXcat",
+            "select": [
+              {
+                "bind": {
+                  "to": "varYval"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "table": {
+        "rows": {
+          "select": [{ "for": { "in": "vars" } }, { "for": { "in": "varYval" } }]
+        }
+      }
+    }
+  ]
+}

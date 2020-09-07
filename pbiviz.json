@@ -1,0 +1,20 @@
+{
+  "visual": {
+    "name": "Crosstab",
+    "displayName": "Crosstab",
+    "guid": "crosstab6B3C739F1561493D9C7B8100E1C19B64",
+    "visualClassName": "Visual",
+    "version": "1.0.0",
+    "description": "NA",
+    "supportUrl": "NA",
+    "gitHubUrl": ""
+  },
+  "apiVersion": "2.6.0",
+  "author": { "name": "Jason Jensen", "email": "jason.o.jensen@gmail.com" },
+  "assets": { "icon": "assets/icon.png" },
+  "externalJS": null,
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "dependencies": null,
+  "stringResources": []
+}
